@@ -1,0 +1,7 @@
+# OS / editor junk
+.DS_Store
+__MACOSX/
+Thumbs.db
+
+# Thmanyah font source package — the site only ships the web fonts in /fonts
+Thmanyah-Font-Family/

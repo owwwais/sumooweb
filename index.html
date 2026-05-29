@@ -3,88 +3,335 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سمو</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>سُمو — رفيقك اليومي لتنظيم العبادات</title>
+    <meta name="description" content="تطبيق سُمو يجمع لك القرآن والسنة، الأذكار والأدعية، ورد المحاسبة، وأدوات المسلم اليومية في مكانٍ واحد. مجاني بالكامل وبدون إعلانات.">
+    <meta name="theme-color" content="#fbf8f1">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="سُمو — رفيقك اليومي لتنظيم العبادات">
+    <meta property="og:description" content="كل ما يحتاجه المسلم من أدوات دينية في مكانٍ واحد. مجاني بالكامل وبدون إعلانات.">
+    <meta property="og:image" content="Logo.png">
+
+    <link rel="icon" type="image/png" href="Logo.png">
+    <link rel="apple-touch-icon" href="Logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <div class="logo">
-                <h1>سُمُوْ</h1>
-            </div>
-            <div class="nav-links">
+
+    <!-- ===================== Navbar ===================== -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="brand">
+                <span class="name">سُمُوْ</span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#treasures">كنوز سمو</a>
+                <a href="#showcase">الميزات</a>
+                <a href="#why">لماذا سمو؟</a>
                 <a href="privacy.html">سياسة الخصوصية</a>
-            </div>
-        </nav>
+                <a href="#download" class="btn btn-navy nav-cta"><i class="fa-solid fa-download"></i> حمّل التطبيق</a>
+            </nav>
 
-        <main>
-            <div class="hero">
+            <button class="nav-toggle" id="navToggle" aria-label="القائمة">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===================== Hero ===================== -->
+        <section class="hero">
+            <span class="orb orb-gold" style="width:380px;height:380px;top:-60px;inset-inline-start:-80px;"></span>
+            <span class="orb orb-navy" style="width:320px;height:320px;bottom:-40px;inset-inline-end:-60px;"></span>
+
+            <div class="container hero-grid">
                 <div class="hero-content">
-                    <h1 class="animated-title">اكتشف تجربة فريدة مع سُمُوْ</h1>
-                    <p class="hero-description">حمّل التطبيق الآن </p>
-                    
-                    <div class="app-buttons">
-                        <a href="#" class="store-button apple secondary">
-                            <i class="fab fa-apple"></i>
-                            <span>متجر آبل</span>
+                    <span class="hero-badge reveal">
+                        <span class="chip">جديد</span>
+                        رفيقك اليومي لبناء عادات إيمانية مستدامة
+                    </span>
+                    <h1 class="reveal d1">رفيقُك اليومي نحو <span class="grad">حياةٍ إيمانية منظّمة</span></h1>
+                    <p class="hero-desc reveal d2">
+                        صُمّم <strong>سُمو</strong> ليجمع لك كل ما يحتاجه المسلم من أدوات دينية في مكانٍ واحد؛
+                        لتكون طاعاتك أكثر ترتيباً وأثراً في حياتك.
+                    </p>
+
+                    <div class="hero-actions reveal d3">
+                        <a href="#download" class="btn btn-navy">
+                            <i class="fa-brands fa-google-play"></i>
+                            <span class="sub"><small>متوفر على</small><strong>متجر جوجل</strong></span>
                         </a>
-                        <a href="#" class="store-button google">
-                            <i class="fab fa-google-play"></i>
-                            <span>متجر جوجل</span>
+                        <a href="#download" class="btn btn-gold">
+                            <i class="fa-brands fa-apple"></i>
+                            <span class="sub"><small>متوفر على</small><strong>متجر آبل</strong></span>
                         </a>
-                        <a href="sumu-سمو.apk" class="store-button google">
-                            <i class="fa-solid fa-download"></i>
-                            <span>تحميل APK</span>
+                        <a href="sumu-سمو.apk" class="btn btn-ghost">
+                            <i class="fa-solid fa-download"></i> تحميل APK
                         </a>
                     </div>
+
+                    <div class="hero-trust reveal d4">
+                        <span><i class="fa-solid fa-circle-check"></i> مجاني بالكامل</span>
+                        <span><i class="fa-solid fa-circle-check"></i> بدون إعلانات</span>
+                        <span><i class="fa-solid fa-circle-check"></i> يعمل دون تسجيل دخول</span>
+                    </div>
                 </div>
-                
-                <div class="hero-image">
-                    <div class="app-logo">
-                        <img src="Logo.png" alt="شعار التطبيق">
+
+                <div class="hero-visual reveal d2">
+                    <span class="hero-ring"></span>
+                    <div class="shot shot-back"><img src="screens/treasures.png" alt="شاشة كنوز سمو"></div>
+                    <div class="shot shot-main"><img src="screens/home.png" alt="الشاشة الرئيسية لتطبيق سمو"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== Value strip ===================== -->
+        <section class="strip">
+            <div class="container strip-inner">
+                <div class="strip-item reveal"><i class="fa-solid fa-gift"></i> <span>مجاني 100%<small>بلا اشتراكات</small></span></div>
+                <div class="strip-item reveal d1"><i class="fa-solid fa-ban"></i> <span>بدون إعلانات<small>تجربة نقية</small></span></div>
+                <div class="strip-item reveal d2"><i class="fa-solid fa-shield-halved"></i> <span>خصوصية تامة<small>بياناتك على جهازك</small></span></div>
+                <div class="strip-item reveal d3"><i class="fa-solid fa-arrows-rotate"></i> <span>تحديثات مستمرة<small>ميزات جديدة دائماً</small></span></div>
+            </div>
+        </section>
+
+        <!-- ===================== Treasures (كنوز سمو) ===================== -->
+        <section class="section treasures" id="treasures">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">كنوز سُمو</span>
+                    <h2 class="section-title">أدواتٌ ثمينة، بين يديك</h2>
+                    <p class="section-sub">مجموعة متكاملة من الأدوات الدينية صُمّمت لتجعل طاعاتك أكثر تنظيماً وأثراً.</p>
+                </div>
+
+                <div class="treasure-grid">
+                    <article class="treasure-card reveal">
+                        <div class="t-icon"><i class="fa-solid fa-book-quran"></i></div>
+                        <h3>القرآن والسنة</h3>
+                        <p>مكتبة شاملة للمصاحف والتفاسير، وقسم مخصّص للبحث والقراءة في الأحاديث النبوية.</p>
+                    </article>
+
+                    <article class="treasure-card reveal d1">
+                        <div class="t-icon"><i class="fa-solid fa-list-check"></i></div>
+                        <h3>خطة حفظ القرآن</h3>
+                        <p>خطة عمليّة منظّمة تقودك نحو ختم كتاب الله ومراجعته، خطوةً بخطوة وبثبات.</p>
+                    </article>
+
+                    <article class="treasure-card reveal d2">
+                        <div class="t-icon"><i class="fa-solid fa-hands-praying"></i></div>
+                        <h3>الذكر والدعاء</h3>
+                        <p>أذكار يومية وأدعية متنوعة، مع مسبحة إلكترونية وقسمٍ للتعرّف على أسماء الله الحسنى.</p>
+                    </article>
+
+                    <article class="treasure-card reveal">
+                        <div class="t-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>ورد المحاسبة</h3>
+                        <p>سجّل طاعاتك وراقب تقدّمك عبر الإحصائيات، وتحدَّ نفسك يوماً بعد يوم لتحافظ على استمراريتك.</p>
+                    </article>
+
+                    <article class="treasure-card reveal d1">
+                        <div class="t-icon"><i class="fa-solid fa-compass"></i></div>
+                        <h3>أدوات المسلم اليومية</h3>
+                        <p>بوصلة دقيقة لاتجاه القبلة، تقويم هجري، وقسم للمنشورات الدينية المتجدّدة والمفيدة.</p>
+                    </article>
+
+                    <article class="treasure-card reveal d2">
+                        <span class="t-tag">تقنية متقدمة</span>
+                        <div class="t-icon"><i class="fa-solid fa-barcode"></i></div>
+                        <h3>كاشف المكونات</h3>
+                        <p>أداة ذكية تفحص مكوّنات المنتجات بلمسةٍ واحدة، لتكون رفيقك المثالي في السفر.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== Showcase deep dive ===================== -->
+        <section class="section showcase" id="showcase">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">تعرّف على سُمو</span>
+                    <h2 class="section-title">تجربة صُمّمت لتُعينك على الطاعة</h2>
+                    <p class="section-sub">واجهة هادئة وأنيقة، تضع بين يديك ما تحتاجه دون تعقيد.</p>
+                </div>
+
+                <!-- Row 1 -->
+                <div class="feature-row">
+                    <div class="fr-media reveal"><div class="fr-frame"><div class="shot"><img src="screens/library.png" alt="مكتبة المصاحف والتفاسير"></div></div></div>
+                    <div class="fr-text reveal d1">
+                        <span class="eyebrow">القرآن والسنة</span>
+                        <h2>مكتبتُك في جيبك</h2>
+                        <p>المصاحف والتفاسير والمزيد، مرتّبة ومتاحة في أي وقت وأي مكان.</p>
+                        <ul class="fr-list">
+                            <li><i class="fa-solid fa-check"></i> مصاحف بروايات متعددة (حفص، ورش، قالون، وغيرها)</li>
+                            <li><i class="fa-solid fa-check"></i> كتب التفسير لفهمٍ أعمق للآيات</li>
+                            <li><i class="fa-solid fa-check"></i> تجربة قراءة مريحة للعين</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="feature-row reverse">
+                    <div class="fr-media reveal"><div class="fr-frame"><div class="shot"><img src="screens/adhkar.png" alt="أذكار الصباح والمساء"></div></div></div>
+                    <div class="fr-text reveal d1">
+                        <span class="eyebrow">الذكر والدعاء</span>
+                        <h2>حصنُك الحصين</h2>
+                        <p>أذكارك اليومية ميسّرة، لترافقك وتحميك في كل أوقاتك.</p>
+                        <ul class="fr-list">
+                            <li><i class="fa-solid fa-check"></i> أذكار الصباح والمساء وأذكار متنوعة</li>
+                            <li><i class="fa-solid fa-check"></i> مسبحة إلكترونية مع عدّاد دقيق</li>
+                            <li><i class="fa-solid fa-check"></i> قسم لأسماء الله الحسنى ومعانيها</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="feature-row">
+                    <div class="fr-media reveal"><div class="fr-frame"><div class="shot"><img src="screens/muhasaba.png" alt="ورد المحاسبة والإحصائيات"></div></div></div>
+                    <div class="fr-text reveal d1">
+                        <span class="eyebrow">ورد المحاسبة</span>
+                        <h2>كُن على بصيرة</h2>
+                        <p>راقب طاعاتك ودوّنها، وتحدَّ نفسك يوماً بعد يوم.</p>
+                        <ul class="fr-list">
+                            <li><i class="fa-solid fa-check"></i> تسجيل الطاعات اليومية بسهولة</li>
+                            <li><i class="fa-solid fa-check"></i> إحصائيات تُظهر تقدّمك واستمراريتك</li>
+                            <li><i class="fa-solid fa-check"></i> سجل زمني يحفظ رحلتك الإيمانية</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="feature-row reverse">
+                    <div class="fr-media reveal"><div class="fr-frame"><div class="shot"><img src="screens/scanner.png" alt="كاشف مكونات المنتجات"></div></div></div>
+                    <div class="fr-text reveal d1">
+                        <span class="eyebrow">كاشف المكونات · تقنية متقدمة</span>
+                        <h2>رفيقُك في السفر</h2>
+                        <p>اعرف ما تأكل بلمسةٍ واحدة، عبر تقنية فحصٍ ذكية ومتقدمة.</p>
+                        <ul class="fr-list">
+                            <li><i class="fa-solid fa-check"></i> فحص فوري لمكوّنات المنتجات بالكاميرا</li>
+                            <li><i class="fa-solid fa-check"></i> تنبيهك إلى المواد المحظورة أو المشكوك فيها</li>
+                            <li><i class="fa-solid fa-check"></i> مثالي عند التسوّق والسفر خارج البلاد</li>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="features">
-                <div class="feature">
-                    <i class="fas fa-gift"></i>
-                    <h3>مجاني بالكامل</h3>
-                    <p>استمتع بجميع المميزات مجاناً وبدون أي تكلفة</p>
+        <!-- ===================== Gallery ===================== -->
+        <section class="section gallery" style="padding-top:0;">
+            <div class="container section-head reveal">
+                <span class="eyebrow">لقطات من التطبيق</span>
+                <h2 class="section-title">شاهد سُمو عن قُرب</h2>
+            </div>
+            <div class="gallery-track reveal">
+                <div class="shot"><img src="screens/home.png" alt="الشاشة الرئيسية"></div>
+                <div class="shot"><img src="screens/treasures.png" alt="كنوز سمو"></div>
+                <div class="shot"><img src="screens/library.png" alt="المكتبة"></div>
+                <div class="shot"><img src="screens/hadith.png" alt="الأحاديث النبوية"></div>
+                <div class="shot"><img src="screens/adhkar.png" alt="الأذكار"></div>
+                <div class="shot"><img src="screens/plan.png" alt="خطة الحفظ"></div>
+                <div class="shot"><img src="screens/muhasaba.png" alt="ورد المحاسبة"></div>
+                <div class="shot"><img src="screens/scanner.png" alt="كاشف المكونات"></div>
+            </div>
+        </section>
+
+        <!-- ===================== Verse band ===================== -->
+        <section class="verse">
+            <span class="orb orb-gold" style="width:300px;height:300px;top:-40px;left:50%;transform:translateX(-50%);opacity:0.35;"></span>
+            <div class="container verse-inner reveal">
+                <p>«أَحَبُّ الأعمالِ إلى اللهِ أَدْوَمُها وإنْ قَلَّ»
+                    <span class="ref">— رواه البخاري ومسلم</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- ===================== Why Sumo ===================== -->
+        <section class="section why" id="why">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">لماذا سُمو؟</span>
+                    <h2 class="section-title">تجربة نظيفة تُريح قلبك وعينك</h2>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-ban"></i>
-                    <h3>بدون إعلانات</h3>
-                    <p>تجربة مستخدم نظيفة خالية من الإعلانات المزعجة</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-magic"></i>
-                    <h3>سهل الاستخدام</h3>
-                    <p>واجهة بسيطة وسلسة تناسب الجميع</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-rocket"></i>
-                    <h3>سريع وسهل</h3>
-                    <p>تجربة مستخدم سلسة وسريعة</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>آمن تماماً</h3>
-                    <p>حماية كاملة لبياناتك</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-sync"></i>
-                    <h3>تحديثات مستمرة</h3>
-                    <p>ميزات جديدة بشكل دوري</p>
+                <div class="why-grid">
+                    <div class="why-card reveal"><div class="w-icon"><i class="fa-solid fa-gift"></i></div><h3>مجاني بالكامل</h3><p>استمتع بجميع المميزات مجاناً دون أي تكلفة أو اشتراكات.</p></div>
+                    <div class="why-card reveal d1"><div class="w-icon"><i class="fa-solid fa-ban"></i></div><h3>بدون إعلانات</h3><p>تجربة مستخدم نقية خالية تماماً من الإعلانات المزعجة.</p></div>
+                    <div class="why-card reveal d2"><div class="w-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3>سهل الاستخدام</h3><p>واجهة بسيطة وسلسة تناسب جميع الأعمار.</p></div>
+                    <div class="why-card reveal"><div class="w-icon"><i class="fa-solid fa-bolt"></i></div><h3>سريع وخفيف</h3><p>أداء سلس وسريع لا يُثقل جهازك.</p></div>
+                    <div class="why-card reveal d1"><div class="w-icon"><i class="fa-solid fa-lock"></i></div><h3>آمن وخاص</h3><p>بياناتك تبقى على جهازك ولا تُشارك مع أي جهة.</p></div>
+                    <div class="why-card reveal d2"><div class="w-icon"><i class="fa-solid fa-arrows-rotate"></i></div><h3>تحديثات مستمرة</h3><p>ميزات ومحتوى جديد يُضاف بشكلٍ دوري.</p></div>
                 </div>
             </div>
-        </main>
+        </section>
 
-        <footer>
-            <p>جميع الحقوق محفوظة 2025</p>
-        </footer>
-    </div>
-    <script src="script.js"></script>
+        <!-- ===================== CTA ===================== -->
+        <section class="cta" id="download">
+            <div class="container">
+                <div class="cta-card reveal">
+                    <span class="orb orb-gold" style="width:300px;height:300px;top:-80px;inset-inline-start:-40px;"></span>
+                    <div class="cta-inner">
+                        <div class="cta-wordmark">سُمُوْ</div>
+                        <h2>ابدأ رحلتك المنظّمة مع سُمو</h2>
+                        <p>حمّل التطبيق الآن، واجعل من طاعاتك رحلةً واضحة ومرتّبة.</p>
+                        <div class="cta-actions">
+                            <a href="#" class="btn btn-gold">
+                                <i class="fa-brands fa-google-play"></i>
+                                <span class="sub"><small>متوفر على</small><strong>متجر جوجل</strong></span>
+                            </a>
+                            <a href="#" class="btn btn-outline-light">
+                                <i class="fa-brands fa-apple"></i>
+                                <span class="sub"><small>متوفر على</small><strong>متجر آبل</strong></span>
+                            </a>
+                            <a href="sumu-سمو.apk" class="btn btn-outline-light">
+                                <i class="fa-solid fa-download"></i> تحميل APK
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===================== Footer ===================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <span class="name">سُمُوْ</span>
+                    </div>
+                    <p>رفيقك اليومي الذي يعينك على تنظيم عباداتك وبناء عاداتٍ إيمانية مستدامة.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="تويتر"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="انستقرام"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:" aria-label="البريد"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-cols">
+                    <div class="footer-col">
+                        <h4>التطبيق</h4>
+                        <a href="#treasures">كنوز سمو</a>
+                        <a href="#showcase">الميزات</a>
+                        <a href="#why">لماذا سمو؟</a>
+                        <a href="#download">تحميل التطبيق</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>روابط</h4>
+                        <a href="privacy.html">سياسة الخصوصية</a>
+                        <a href="mailto:">تواصل معنا</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 سُمو — جميع الحقوق محفوظة · صُنع بكل <span class="heart">❤</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=4"></script>
 </body>
 </html>
