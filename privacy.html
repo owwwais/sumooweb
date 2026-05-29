@@ -3,483 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية - سُمُوْ</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .privacy-header {
-            background-color: #f7f7f7;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .privacy-header h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .privacy-header p {
-            font-size: 16px;
-            color: #666;
-        }
-        
-        .privacy-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .privacy-intro {
-            margin-bottom: 20px;
-        }
-        
-        .privacy-card {
-            background-color: #f7f7f7;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .privacy-card i {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .privacy-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
-        }
-        
-        .privacy-section {
-            background-color: #f7f7f7;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        
-        .section-icon {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .privacy-section h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        
-        .privacy-section p {
-            font-size: 16px;
-            color: #666;
-        }
-        
-        .contact-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        
-        .contact-button {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 10px 20px;
-            margin: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: #333;
-        }
-        
-        .contact-button i {
-            margin-right: 10px;
-        }
-        
-        .contact-button.email {
-            background-color: #f7f7f7;
-        }
-        
-        .contact-button.form-button {
-            background-color: white;
-            color: #c2951f;
-        }
-        
-        .privacy-footer {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-        }
-        
-        .privacy-footer p {
-            font-size: 16px;
-            color: #666;
-        }
-        
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-        
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .close-button {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        
-        .close-button:hover,
-        .close-button:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        
-        .submit-button {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        .submit-button:hover {
-            background-color: #3e8e41;
-        }
-        
-        /* Success Modal styles */
-        .success-modal {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .success-content {
-            text-align: center;
-        }
-        
-        .success-animation {
-            margin-bottom: 20px;
-        }
-        
-        .checkmark-circle {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-color: #4CAF50;
-            display: inline-block;
-            margin: 0 auto;
-        }
-        
-        .checkmark {
-            display: block;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-color: #fff;
-            position: relative;
-        }
-        
-        .draw {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px;
-            height: 20px;
-            border-bottom: 10px solid #fff;
-            border-left: 20px solid transparent;
-            border-right: 20px solid transparent;
-        }
-        
-        .close-success-button {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        .close-success-button:hover {
-            background-color: #3e8e41;
-        }
-        
-        /* Loading Spinner styles */
-        .loading-spinner {
-            display: none;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #4CAF50;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        
-        /* Add animation to modal */
-        .modal-content {
-            animation: fadeIn 0.5s;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        
-        /* Add animation to modal close */
-        .modal-content.show {
-            animation: fadeOut 0.5s;
-        }
-        
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0;
-            }
-        }
-        
-        .success-message {
-            display: none;
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 1;
-        }
-    </style>
+    <title>سياسة الخصوصية — سُمو</title>
+    <meta name="description" content="سياسة الخصوصية لتطبيق سُمو. نحن لا نجمع أو نخزّن أي بيانات شخصية.">
+    <meta name="theme-color" content="#fbf8f1">
+
+    <link rel="icon" type="image/png" href="Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <div class="logo">
-                <h1>سُمُوْ</h1>
-            </div>
-            <div class="nav-links">
-                <a href="index.html">الرئيسية</a>
-            </div>
-        </nav>
 
-        <main class="privacy-content">
-            <div class="privacy-header">
+    <!-- ===================== Navbar ===================== -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand">
+                <span class="name">سُمُوْ</span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html#treasures">كنوز سمو</a>
+                <a href="index.html#showcase">الميزات</a>
+                <a href="index.html#why">لماذا سمو؟</a>
+                <a href="index.html#download" class="btn btn-navy nav-cta"><i class="fa-solid fa-download"></i> حمّل التطبيق</a>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="القائمة"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===================== Page hero ===================== -->
+        <section class="page-hero">
+            <span class="orb orb-gold" style="width:320px;height:320px;top:-40px;inset-inline-start:-60px;"></span>
+            <div class="container reveal">
+                <span class="eyebrow">خصوصيتك أمانة</span>
                 <h1>سياسة الخصوصية</h1>
-                <p class="last-update">آخر تحديث: 17 ربيع الأول 1446</p>
+                <p class="updated">آخر تحديث: 17 ربيع الأول 1446هـ</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top:0;">
+            <div class="privacy-lead reveal">
+                <i class="fa-solid fa-shield-heart"></i>
+                <p>نحن في تطبيق «سُمو» نولي خصوصية مستخدمينا أهميةً كبيرة، ونؤكّد أننا <strong>لا نجمع ولا نخزّن أي بيانات شخصية</strong> على الإطلاق.</p>
             </div>
 
-            <div class="privacy-container">
-                <div class="privacy-intro">
-                    <div class="privacy-card">
-                        <i class="fas fa-shield-alt"></i>
-                        <p>نحن في تطبيق "سُمُوْ" نولي أهمية كبيرة لخصوصية مستخدمينا ونؤكد عدم جمع أو تخزين أي بيانات شخصية.</p>
-                    </div>
-                </div>
+            <div class="privacy-grid">
+                <article class="privacy-section reveal">
+                    <div class="s-icon"><i class="fa-solid fa-database"></i></div>
+                    <h2>جمع المعلومات</h2>
+                    <p>لا نقوم بجمع أو تخزين أي معلومات شخصية للمستخدمين. ولا يتطلب التطبيق تسجيل دخول أو إنشاء حساب.</p>
+                </article>
 
-                <div class="privacy-grid">
-                    <div class="privacy-section">
-                        <div class="section-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h2>جمع المعلومات</h2>
-                        <p>لا نقوم بجمع أو تخزين أي معلومات شخصية للمستخدمين. التطبيق لا يتطلب تسجيل دخول أو إنشاء حساب.</p>
-                    </div>
+                <article class="privacy-section reveal d1">
+                    <div class="s-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h2>استخدام التطبيق</h2>
+                    <ul>
+                        <li>يمكنك استخدام جميع الميزات دون الحاجة لتسجيل الدخول.</li>
+                        <li>جميع البيانات تتم معالجتها محلياً على جهازك.</li>
+                        <li>لا نتتبّع نشاطك أو طريقة استخدامك للتطبيق.</li>
+                    </ul>
+                </article>
 
-                    <div class="privacy-section">
-                        <div class="section-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h2>استخدام التطبيق</h2>
-                        <ul>
-                            <li>يمكنك استخدام جميع ميزات التطبيق دون الحاجة لتسجيل الدخول</li>
-                            <li>جميع البيانات تتم معالجتها محلياً على جهازك</li>
-                            <li>لا نقوم بتتبع نشاطك أو استخدامك للتطبيق</li>
-                        </ul>
-                    </div>
+                <article class="privacy-section reveal d2">
+                    <div class="s-icon"><i class="fa-solid fa-lock"></i></div>
+                    <h2>حماية البيانات</h2>
+                    <p>بما أن التطبيق لا يجمع أي بيانات، فإن كل ما يخصّك يبقى على جهازك الشخصي ولا يُشارك مع أي جهة.</p>
+                </article>
 
-                    <div class="privacy-section">
-                        <div class="section-icon">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <h2>حماية البيانات</h2>
-                        <p>بما أن التطبيق لا يجمع أو يخزن أي بيانات شخصية، فإن جميع بياناتك تبقى على جهازك الشخصي ولا يتم مشاركتها مع أي جهة.</p>
-                    </div>
+                <article class="privacy-section reveal">
+                    <div class="s-icon"><i class="fa-solid fa-cookie-bite"></i></div>
+                    <h2>ملفات تعريف الارتباط</h2>
+                    <p>لا يستخدم تطبيقنا أي ملفات تعريف ارتباط (Cookies) أو تقنيات تتبّع مماثلة.</p>
+                </article>
 
-                    <div class="privacy-section">
-                        <div class="section-icon">
-                            <i class="fas fa-cookie-bite"></i>
-                        </div>
-                        <h2>ملفات تعريف الارتباط</h2>
-                        <p>لا يستخدم تطبيقنا أي ملفات تعريف ارتباط أو تقنيات تتبع مماثلة.</p>
-                    </div>
+                <article class="privacy-section reveal d1">
+                    <div class="s-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                    <h2>تغييرات على السياسة</h2>
+                    <p>قد نحدّث سياسة الخصوصية من وقتٍ لآخر، وسنُشعرك بأي تغييرات جوهرية من خلال التطبيق.</p>
+                </article>
 
-                    <div class="privacy-section">
-                        <div class="section-icon">
-                            <i class="fas fa-sync"></i>
-                        </div>
-                        <h2>تغييرات على هذه السياسة</h2>
-                        <p>قد نقوم بتحديث سياسة الخصوصية من وقت لآخر. سيتم إشعارك بأي تغييرات جوهرية من خلال التطبيق.</p>
+                <article class="privacy-section reveal d2">
+                    <div class="s-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <h2>الاتصال بنا</h2>
+                    <p>إن كان لديك أي سؤال أو استفسار، يسعدنا تواصلك معنا:</p>
+                    <div class="privacy-contact">
+                        <button class="btn btn-navy" onclick="openContactForm()">
+                            <i class="fa-solid fa-message"></i> نموذج التواصل
+                        </button>
                     </div>
-
-                    <div class="privacy-section contact-section">
-                        <div class="section-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h2>الاتصال بنا</h2>
-                        <p>إذا كان لديك أي أسئلة أو استفسارات، يمكنك التواصل معنا عبر:</p>
-                        <div class="contact-buttons">
-                            <a href="mailto:" class="contact-button email">
-                                <i class="fas fa-envelope"></i>
-                                <span>البريد الإلكتروني</span>
-                            </a>
-                            <button class="contact-button form-button" onclick="openContactForm()">
-                                <i class="fas fa-message"></i>
-                                <span>نموذج التواصل</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="privacy-footer">
-                    <p>نشكرك على ثقتك بتطبيق "سُمُوْ"، ونلتزم بالحفاظ على خصوصيتك وتقديم أفضل تجربة ممكنة.</p>
-                </div>
+                </article>
             </div>
-        </main>
 
-        <!-- Success Message -->
-        <div id="successMessage" class="success-message">
-            <span>تم الإرسال بنجاح! 🎉</span>
+            <div class="privacy-outro reveal">
+                <p>نشكرك على ثقتك بتطبيق «سُمو»، ونلتزم بالحفاظ على خصوصيتك وتقديم أفضل تجربةٍ ممكنة.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Success toast -->
+    <div id="successMessage" class="success-message"><span>تم الإرسال بنجاح! 🎉</span></div>
+
+    <!-- Contact modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeContactForm()" aria-label="إغلاق">&times;</button>
+            <h2>تواصل معنا</h2>
+            <form id="contactForm" action="https://formspree.io/f/xannloql" method="POST">
+                <div class="form-group"><input type="text" name="name" required placeholder="الاسم"></div>
+                <div class="form-group"><input type="email" name="email" required placeholder="البريد الإلكتروني"></div>
+                <div class="form-group"><textarea name="message" required placeholder="رسالتك"></textarea></div>
+                <button type="submit" class="btn btn-navy submit-button">
+                    <span class="button-text">إرسال</span>
+                    <div class="loading-spinner"></div>
+                </button>
+            </form>
         </div>
-
-        <!-- Contact Form Modal -->
-        <div id="contactModal" class="modal">
-            <div class="modal-content">
-                <span class="close-button" onclick="closeContactForm()">&times;</span>
-                <h2>تواصل معنا</h2>
-                <form id="contactForm" action="https://formspree.io/f/xannloql" method="POST">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required placeholder="الاسم">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required placeholder="البريد الإلكتروني">
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" required placeholder="رسالتك"></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">
-                        <span class="button-text">إرسال</span>
-                        <div class="loading-spinner"></div>
-                    </button>
-                </form>
-            </div>
-        </div>
-
-        <footer>
-            <p>جميع الحقوق محفوظة 2025</p>
-        </footer>
     </div>
 
+    <!-- ===================== Footer ===================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <span class="name">سُمُوْ</span>
+                    </div>
+                    <p>رفيقك اليومي الذي يعينك على تنظيم عباداتك وبناء عاداتٍ إيمانية مستدامة.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="تويتر"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="انستقرام"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:" aria-label="البريد"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-cols">
+                    <div class="footer-col">
+                        <h4>التطبيق</h4>
+                        <a href="index.html#treasures">كنوز سمو</a>
+                        <a href="index.html#showcase">الميزات</a>
+                        <a href="index.html#why">لماذا سمو؟</a>
+                        <a href="index.html#download">تحميل التطبيق</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>روابط</h4>
+                        <a href="privacy.html">سياسة الخصوصية</a>
+                        <a href="mailto:">تواصل معنا</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 سُمو — جميع الحقوق محفوظة · صُنع بكل <span class="heart">❤</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=4"></script>
     <script>
         function openContactForm() {
-            const modal = document.getElementById("contactModal");
-            modal.style.display = "block";
-            setTimeout(() => modal.classList.add('show'), 10);
+            const modal = document.getElementById('contactModal');
+            modal.classList.add('show');
         }
-
         function closeContactForm() {
-            const modal = document.getElementById("contactModal");
-            modal.classList.remove('show');
-            setTimeout(() => modal.style.display = "none", 300);
+            document.getElementById('contactModal').classList.remove('show');
         }
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) closeContactForm();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeContactForm();
+        });
 
-        function openSuccessModal() {
-            const modal = document.getElementById("successModal");
-            modal.style.display = "block";
-            setTimeout(() => modal.classList.add('show'), 10);
-        }
-
-        function closeSuccessModal() {
-            const modal = document.getElementById("successModal");
-            modal.classList.remove('show');
-            setTimeout(() => modal.style.display = "none", 300);
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                closeContactForm();
-                closeSuccessModal();
-            }
-        }
-
-        // Handle form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
             const form = e.target;
             const submitButton = form.querySelector('button[type="submit"]');
             const buttonText = submitButton.querySelector('.button-text');
             const spinner = submitButton.querySelector('.loading-spinner');
             const originalText = buttonText.textContent;
-            
+
             submitButton.disabled = true;
             buttonText.textContent = 'جاري الإرسال...';
             spinner.style.display = 'inline-block';
@@ -487,29 +188,21 @@
             fetch(form.action, {
                 method: 'POST',
                 body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             })
-            .then(response => response.json())
+            .then(res => res.json())
             .then(data => {
                 if (data.ok) {
                     form.reset();
                     closeContactForm();
-                    setTimeout(() => {
-                        const successMessage = document.getElementById("successMessage");
-                        successMessage.style.display = "block";
-                        setTimeout(() => {
-                            successMessage.style.display = "none";
-                        }, 3000); // إغلاق رسالة النجاح تلقائياً بعد 3 ثواني
-                    }, 300);
+                    const msg = document.getElementById('successMessage');
+                    msg.style.display = 'block';
+                    setTimeout(() => { msg.style.display = 'none'; }, 3000);
                 } else {
-                    throw new Error('حدث خطأ في إرسال الرسالة');
+                    throw new Error('error');
                 }
             })
-            .catch(error => {
-                alert('عذراً، حدث خطأ في إرسال الرسالة. الرجاء المحاولة مرة أخرى.');
-            })
+            .catch(() => alert('عذراً، حدث خطأ في إرسال الرسالة. الرجاء المحاولة مرة أخرى.'))
             .finally(() => {
                 submitButton.disabled = false;
                 buttonText.textContent = originalText;
