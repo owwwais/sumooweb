@@ -109,7 +109,7 @@ body {
     line-height: 1.75;
     color: var(--body);
     background-color: var(--cream);
-    /* background-image: var(--grad-page); */
+    background-image: var(--grad-page);
     background-repeat: no-repeat;
     min-height: 100vh;
     overflow-x: hidden;
@@ -345,8 +345,9 @@ section { position: relative; }
     border-radius: 28px;
     box-shadow: var(--shadow-lg);
     overflow: hidden;
-    background: var(--white);
     border: 1px solid rgba(255, 255, 255, 0.6);
+    background: transparent !important;
+    background-color: transparent !important;
 }
 .hero-visual .shot-main {
     position: relative;
