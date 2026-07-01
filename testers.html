@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>انضم كمختبِر داخلي — سُمو</title>
+    <meta name="description" content="سجّل بياناتك للانضمام إلى برنامج المختبرين الداخليين لتطبيق سُمو، وكن من أوائل من يجرّب الميزات الجديدة.">
+    <meta name="theme-color" content="#fbf8f1">
+    <meta name="robots" content="noindex">
+
+    <link rel="icon" type="image/png" href="Logo.png">
+    <link rel="apple-touch-icon" href="Logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="testers.css?v=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="testers-page">
+
+    <!-- ===================== Navbar ===================== -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand">
+                <span class="name">سُمُوْ</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="index.html#showcase">الميزات</a>
+                <a href="privacy.html">سياسة الخصوصية</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="tester-main">
+        <span class="orb orb-gold" style="width:360px;height:360px;top:-80px;inset-inline-start:-100px;"></span>
+        <span class="orb orb-navy" style="width:300px;height:300px;bottom:-60px;inset-inline-end:-80px;"></span>
+
+        <div class="container">
+            <div class="tester-wrap">
+                <!-- Intro side -->
+                <div class="tester-intro">
+                    <span class="eyebrow">برنامج المختبرين</span>
+                    <h1>كُن من أوائل مَن يجرّب <span class="grad">سُمو</span></h1>
+                    <p>
+                        نبحث عن مختبِرين داخليين يساعدوننا في تحسين التطبيق قبل إطلاقه للعامة.
+                        سجّل بياناتك، وسنرسل لك دعوة الوصول المبكر على بريدك.
+                    </p>
+                    <ul class="tester-perks">
+                        <li><i class="fa-solid fa-circle-check"></i> وصول مبكر للميزات الجديدة</li>
+                        <li><i class="fa-solid fa-circle-check"></i> رأيك يصنع نسخة أفضل من سُمو</li>
+                        <li><i class="fa-solid fa-circle-check"></i> بياناتك تُستخدم فقط لغرض الاختبار</li>
+                    </ul>
+                </div>
+
+                <!-- Form card -->
+                <div class="tester-card">
+                    <form id="testerForm" novalidate>
+                        <div class="field">
+                            <label for="name">الاسم <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="name" name="name" placeholder="اكتب اسمك الكامل"
+                                       autocomplete="name" required>
+                            </div>
+                            <small class="err" data-for="name"></small>
+                        </div>
+
+                        <div class="field">
+                            <label for="email">البريد الإلكتروني <span class="req">*</span></label>
+                            <div class="input-wrap">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="example@email.com"
+                                       autocomplete="email" inputmode="email" dir="ltr" required>
+                            </div>
+                            <small class="err" data-for="email"></small>
+                            <small class="hint">للأندرويد: استخدم بريد جوجل (Gmail) المرتبط بجهازك.</small>
+                        </div>
+
+                        <div class="field">
+                            <label>نوع الجهاز <span class="req">*</span></label>
+                            <div class="device-toggle">
+                                <input type="radio" id="dev-android" name="device" value="Android" required>
+                                <label for="dev-android" class="device-opt">
+                                    <i class="fa-brands fa-android"></i>
+                                    <span>أندرويد</span>
+                                </label>
+
+                                <input type="radio" id="dev-apple" name="device" value="Apple">
+                                <label for="dev-apple" class="device-opt">
+                                    <i class="fa-brands fa-apple"></i>
+                                    <span>آبل (iOS)</span>
+                                </label>
+                            </div>
+                            <small class="err" data-for="device"></small>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold submit-btn" id="submitBtn">
+                            <span class="btn-label"><i class="fa-solid fa-paper-plane"></i> سجّلني كمختبِر</span>
+                            <span class="btn-spinner"><i class="fa-solid fa-spinner fa-spin"></i> جارٍ الإرسال…</span>
+                        </button>
+
+                        <p class="form-note">
+                            <i class="fa-solid fa-lock"></i>
+                            لن نشارك بياناتك مع أي جهة خارجية.
+                        </p>
+                    </form>
+
+                    <!-- Success state -->
+                    <div class="tester-success" id="successState" hidden>
+                        <div class="success-mark"><i class="fa-solid fa-check"></i></div>
+                        <h2>تم تسجيلك بنجاح!</h2>
+                        <p>شكراً لانضمامك إلى مختبِري سُمو. سنتواصل معك عبر بريدك قريباً بإذن الله.</p>
+                        <a href="index.html" class="btn btn-navy"><i class="fa-solid fa-house"></i> العودة للرئيسية</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer tester-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 سُمو — جميع الحقوق محفوظة · صُنع بكل <span class="heart">❤</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="testers.js?v=1"></script>
+</body>
+</html>
