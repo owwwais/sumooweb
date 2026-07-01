@@ -6,7 +6,7 @@
    ⚙️  SETUP: paste your deployed Apps Script Web App URL below.
    See SETUP-testers.md for step-by-step instructions.
    ========================================================================== */
-const ENDPOINT = 'ضع_هنا_رابط_تطبيق_Apps_Script'; // e.g. https://script.google.com/macros/s/AKfy.../exec
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycby5857f_CT81J2HOAH7XmOCl4VQ_j1DYDDwKeIY2cjIrmFG3jCOuEFAAKlXpYLAc35-vg/exec'; // e.g. https://script.google.com/macros/s/AKfy.../exec
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('testerForm');
