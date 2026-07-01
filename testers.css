@@ -1,0 +1,245 @@
+/* ==========================================================================
+   سُمو — Internal testers sign-up page
+   Reuses the design tokens from style.css (navy + gold + cream).
+   ========================================================================== */
+
+.testers-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.tester-main {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 64px 0 88px;
+    overflow: hidden;
+}
+
+.tester-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+}
+
+/* ---------------- Intro side ---------------- */
+.tester-intro h1 {
+    font-size: clamp(2rem, 4.4vw, 3rem);
+    font-weight: 900;
+    line-height: 1.3;
+    margin: 16px 0 18px;
+}
+.tester-intro .grad {
+    background: var(--grad-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.tester-intro p {
+    font-size: 1.12rem;
+    color: var(--body);
+    max-width: 46ch;
+}
+.tester-perks {
+    list-style: none;
+    margin-top: 26px;
+    display: grid;
+    gap: 14px;
+}
+.tester-perks li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    color: var(--ink);
+}
+.tester-perks li i {
+    color: var(--gold-600);
+    font-size: 1.15rem;
+}
+
+/* ---------------- Form card ---------------- */
+.tester-card {
+    position: relative;
+    background: var(--white);
+    border: 1px solid rgba(20, 48, 78, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-lg);
+}
+
+.field { margin-bottom: 22px; }
+.field > label {
+    display: block;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+    font-size: 0.98rem;
+}
+.field .req { color: var(--gold-600); }
+
+.input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.input-wrap i {
+    position: absolute;
+    inset-inline-start: 16px;
+    color: var(--muted);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: color 0.25s ease;
+}
+.input-wrap input {
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--ink);
+    background: var(--sand-50);
+    border: 1.5px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 15px 46px 15px 16px;
+    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+.input-wrap input::placeholder { color: var(--muted); }
+.input-wrap input:focus {
+    outline: none;
+    background: var(--white);
+    border-color: var(--gold-500);
+    box-shadow: 0 0 0 4px rgba(207, 161, 46, 0.14);
+}
+.input-wrap input:focus + i,
+.input-wrap:focus-within i { color: var(--gold-600); }
+input[dir="ltr"] { text-align: left; }
+
+.hint {
+    display: block;
+    margin-top: 7px;
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+.err {
+    display: none;
+    margin-top: 7px;
+    font-size: 0.82rem;
+    color: #c0392b;
+    font-weight: 500;
+}
+.field.invalid .err { display: block; }
+.field.invalid .input-wrap input { border-color: #e07a6f; background: #fdf3f2; }
+
+/* ---------------- Device toggle ---------------- */
+.device-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.device-toggle input { position: absolute; opacity: 0; pointer-events: none; }
+.device-opt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    background: var(--sand-50);
+    border: 1.5px solid transparent;
+    font-weight: 700;
+    color: var(--body);
+    cursor: pointer;
+    transition: all 0.25s var(--ease);
+}
+.device-opt i { font-size: 1.3rem; }
+.device-opt:hover { background: var(--sand-100); }
+.device-toggle input:checked + .device-opt {
+    background: rgba(207, 161, 46, 0.12);
+    border-color: var(--gold-500);
+    color: var(--gold-700);
+    box-shadow: 0 6px 18px -8px rgba(192, 144, 31, 0.5);
+}
+.device-toggle input:focus-visible + .device-opt {
+    box-shadow: 0 0 0 4px rgba(207, 161, 46, 0.18);
+}
+
+/* ---------------- Submit ---------------- */
+.submit-btn {
+    width: 100%;
+    margin-top: 6px;
+    position: relative;
+}
+.submit-btn .btn-spinner { display: none; }
+.submit-btn.loading { pointer-events: none; opacity: 0.85; }
+.submit-btn.loading .btn-label { display: none; }
+.submit-btn.loading .btn-spinner { display: inline-flex; align-items: center; gap: 10px; }
+
+.form-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+.form-note i { color: var(--gold-600); }
+
+/* Server / network error shown above the button */
+.form-error {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding: 13px 16px;
+    border-radius: var(--radius-sm);
+    background: #fdf3f2;
+    border: 1px solid #f0c9c4;
+    color: #b23b2e;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.form-error.show { display: flex; }
+.form-error i { font-size: 1.05rem; }
+
+/* ---------------- Success ---------------- */
+.tester-success {
+    text-align: center;
+    padding: 12px 8px;
+    animation: successIn 0.5s var(--ease) both;
+}
+.success-mark {
+    width: 78px;
+    height: 78px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--grad-gold);
+    color: #241802;
+    font-size: 2rem;
+    box-shadow: var(--shadow-gold);
+}
+.tester-success h2 { font-size: 1.7rem; margin-bottom: 12px; }
+.tester-success p { color: var(--body); max-width: 40ch; margin: 0 auto 26px; }
+
+@keyframes successIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.tester-footer { margin-top: auto; }
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 900px) {
+    .tester-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .tester-intro { text-align: center; }
+    .tester-intro p { margin-inline: auto; }
+    .tester-perks { max-width: 340px; margin-inline: auto; margin-top: 22px; }
+}
+@media (max-width: 520px) {
+    .tester-card { padding: 28px 22px; }
+    .tester-main { padding: 40px 0 64px; }
+}
