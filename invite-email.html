@@ -4,16 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no,address=no,email=no,date=no">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
 <title>دعوة لتجربة تطبيق سُمو</title>
 <!--[if mso]>
 <style>table,td,div,p,a{font-family:Tahoma,Arial,sans-serif !important;}</style>
 <![endif]-->
 <style>
-  /* Mobile tweaks (ignored by Outlook, honoured by Gmail/Apple Mail) */
+  /* Base */
+  body{margin:0;padding:0;width:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+  table{border-collapse:collapse;}
+  img{border:0;line-height:100%;outline:none;text-decoration:none;}
+
+  /* Mobile-first tweaks (honoured by Gmail app, Apple Mail, Outlook mobile) */
   @media only screen and (max-width:600px){
-    .card{width:100% !important;}
+    .wrap{padding:0 !important;}
+    .card{width:100% !important;max-width:100% !important;border-radius:0 !important;}
     .px{padding-left:22px !important;padding-right:22px !important;}
-    .h1{font-size:24px !important;}
+    .hpad{padding-left:22px !important;padding-right:22px !important;}
+    .brandmark{font-size:36px !important;}
+    .h1{font-size:23px !important;line-height:1.45 !important;}
+    .lead{font-size:16px !important;}
+    .step-txt{font-size:15px !important;}
+    /* Full-width, easy-to-tap button */
+    .btn-td{padding-left:22px !important;padding-right:22px !important;}
+    .btn-a{display:block !important;width:100% !important;box-sizing:border-box !important;
+           padding-top:17px !important;padding-bottom:17px !important;
+           padding-left:12px !important;padding-right:12px !important;text-align:center !important;}
   }
 </style>
 </head>
@@ -26,29 +44,28 @@
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f3ecdd;">
     <tr>
-      <td align="center" style="padding:28px 12px;">
+      <td class="wrap" align="center" style="padding:24px 12px;">
 
         <!-- Card -->
-        <table role="presentation" class="card" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background-color:#ffffff;border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(13,33,56,0.16);">
+        <table role="presentation" class="card" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background-color:#ffffff;border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(13,33,56,0.16);">
 
           <!-- ===== Header band (navy) ===== -->
           <tr>
-            <td align="center" bgcolor="#0d2138" style="background-color:#0d2138;padding:34px 24px 30px;">
-              <div style="font-family:'Amiri',Tahoma,Georgia,serif;font-size:40px;font-weight:bold;color:#e0b94a;letter-spacing:1px;line-height:1;">سُمُوْ</div>
+            <td class="hpad" align="center" bgcolor="#0d2138" style="background-color:#0d2138;padding:32px 24px 28px;">
+              <div class="brandmark" style="font-family:'Amiri',Tahoma,Georgia,serif;font-size:40px;font-weight:bold;color:#e0b94a;letter-spacing:1px;line-height:1;">سُمُوْ</div>
               <div style="font-family:Tahoma,Arial,sans-serif;font-size:13px;color:#a9bdd0;margin-top:10px;letter-spacing:1px;">رفيقُك اليومي لتنظيم العبادات</div>
-              <!-- Gold accent line -->
               <div style="width:60px;height:4px;background-color:#cfa12e;border-radius:999px;margin:18px auto 0;font-size:0;line-height:0;">&nbsp;</div>
             </td>
           </tr>
 
           <!-- ===== Body ===== -->
           <tr>
-            <td class="px" style="padding:36px 44px 8px;font-family:Tahoma,Arial,sans-serif;color:#14304e;text-align:right;">
+            <td class="px" style="padding:32px 40px 6px;font-family:Tahoma,Arial,sans-serif;color:#14304e;text-align:right;">
               <div style="display:inline-block;background-color:#f8f3e9;color:#a9781a;font-family:Tahoma,Arial,sans-serif;font-size:12px;font-weight:bold;padding:6px 14px;border-radius:999px;">✦ دعوة خاصة للمختبرين</div>
               <h1 class="h1" style="margin:18px 0 0;font-family:'Amiri',Tahoma,Georgia,serif;font-size:28px;font-weight:bold;color:#14304e;line-height:1.4;">
                 أهلاً بك 👋 دعوتك لتجربة <span style="color:#c0901f;">سُمو</span> جاهزة
               </h1>
-              <p style="margin:16px 0 0;font-family:Tahoma,Arial,sans-serif;font-size:16px;line-height:1.9;color:#51606f;">
+              <p class="lead" style="margin:16px 0 0;font-family:Tahoma,Arial,sans-serif;font-size:16px;line-height:1.9;color:#51606f;">
                 يسعدنا اختيارك ضمن المختبرين الأوائل لتطبيق <strong style="color:#14304e;">سُمو</strong>.
                 رأيك في هذه المرحلة يساعدنا على تقديم نسخة أفضل قبل الإطلاق الرسمي.
                 اتبع الخطوات البسيطة التالية لتبدأ:
@@ -58,29 +75,29 @@
 
           <!-- ===== Steps ===== -->
           <tr>
-            <td class="px" style="padding:22px 44px 4px;">
+            <td class="px" style="padding:20px 40px 4px;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:Tahoma,Arial,sans-serif;">
                 <tr>
-                  <td width="40" valign="top" style="padding-bottom:16px;">
+                  <td width="38" valign="top" style="padding-bottom:16px;">
                     <div style="width:30px;height:30px;background-color:#cfa12e;color:#241802;border-radius:50%;text-align:center;line-height:30px;font-size:15px;font-weight:bold;">1</div>
                   </td>
-                  <td valign="top" style="padding-bottom:16px;font-size:15px;line-height:1.8;color:#51606f;text-align:right;">
+                  <td class="step-txt" valign="top" style="padding-bottom:16px;font-size:15px;line-height:1.8;color:#51606f;text-align:right;">
                     افتح هذا البريد من <strong style="color:#14304e;">هاتف أندرويد</strong> المسجَّل عليه نفس بريدك الإلكتروني (حساب جوجل).
                   </td>
                 </tr>
                 <tr>
-                  <td width="40" valign="top" style="padding-bottom:16px;">
+                  <td width="38" valign="top" style="padding-bottom:16px;">
                     <div style="width:30px;height:30px;background-color:#cfa12e;color:#241802;border-radius:50%;text-align:center;line-height:30px;font-size:15px;font-weight:bold;">2</div>
                   </td>
-                  <td valign="top" style="padding-bottom:16px;font-size:15px;line-height:1.8;color:#51606f;text-align:right;">
+                  <td class="step-txt" valign="top" style="padding-bottom:16px;font-size:15px;line-height:1.8;color:#51606f;text-align:right;">
                     اضغط زر <strong style="color:#14304e;">«قبول الدعوة»</strong> بالأسفل، ثم اختر <strong style="color:#14304e;">Become a tester (أصبح مختبِراً)</strong>.
                   </td>
                 </tr>
                 <tr>
-                  <td width="40" valign="top" style="padding-bottom:4px;">
+                  <td width="38" valign="top" style="padding-bottom:4px;">
                     <div style="width:30px;height:30px;background-color:#cfa12e;color:#241802;border-radius:50%;text-align:center;line-height:30px;font-size:15px;font-weight:bold;">3</div>
                   </td>
-                  <td valign="top" style="padding-bottom:4px;font-size:15px;line-height:1.8;color:#51606f;text-align:right;">
+                  <td class="step-txt" valign="top" style="padding-bottom:4px;font-size:15px;line-height:1.8;color:#51606f;text-align:right;">
                     ستظهر لك صفحة التطبيق على Google Play — اضغط <strong style="color:#14304e;">تثبيت</strong> واستمتع بالتجربة!
                   </td>
                 </tr>
@@ -90,15 +107,15 @@
 
           <!-- ===== Button ===== -->
           <tr>
-            <td align="center" style="padding:30px 44px 8px;">
+            <td class="btn-td" align="center" style="padding:28px 40px 8px;">
               <!--[if mso]>
-              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://play.google.com/apps/testing/com.owwwais.sumu" style="height:54px;v-text-anchor:middle;width:300px;" arcsize="50%" strokecolor="#a9781a" fillcolor="#cfa12e">
+              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://play.google.com/apps/testing/com.owwwais.sumu" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" strokecolor="#a9781a" fillcolor="#cfa12e">
                 <w:anchorlock/>
                 <center style="color:#241802;font-family:Tahoma,sans-serif;font-size:17px;font-weight:bold;">قبول الدعوة وتجربة التطبيق</center>
               </v:roundrect>
               <![endif]-->
               <!--[if !mso]><!-- -->
-              <a href="https://play.google.com/apps/testing/com.owwwais.sumu" target="_blank"
+              <a class="btn-a" href="https://play.google.com/apps/testing/com.owwwais.sumu" target="_blank"
                  style="display:inline-block;background-color:#cfa12e;background-image:linear-gradient(135deg,#e0b94a 0%,#c0901f 100%);color:#241802;font-family:Tahoma,Arial,sans-serif;font-size:17px;font-weight:bold;text-decoration:none;padding:16px 40px;border-radius:999px;box-shadow:0 12px 28px rgba(192,144,31,0.45);">
                 قبول الدعوة وتجربة التطبيق ←
               </a>
@@ -108,7 +125,7 @@
 
           <!-- Fallback link -->
           <tr>
-            <td class="px" align="center" style="padding:6px 44px 26px;font-family:Tahoma,Arial,sans-serif;">
+            <td class="px" align="center" style="padding:8px 40px 24px;font-family:Tahoma,Arial,sans-serif;">
               <p style="margin:0;font-size:12.5px;color:#8a96a3;line-height:1.7;">
                 إن لم يعمل الزر، انسخ هذا الرابط والصقه في متصفح هاتفك:<br>
                 <a href="https://play.google.com/apps/testing/com.owwwais.sumu" target="_blank" style="color:#c0901f;word-break:break-all;text-decoration:underline;">https://play.google.com/apps/testing/com.owwwais.sumu</a>
@@ -118,7 +135,7 @@
 
           <!-- Note -->
           <tr>
-            <td class="px" style="padding:0 44px 30px;">
+            <td class="px" style="padding:0 40px 28px;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f8f3e9;border-radius:14px;">
                 <tr>
                   <td style="padding:16px 20px;font-family:Tahoma,Arial,sans-serif;font-size:13px;line-height:1.8;color:#8a6a1a;text-align:right;">
@@ -131,7 +148,7 @@
 
           <!-- ===== Footer ===== -->
           <tr>
-            <td align="center" bgcolor="#0d2138" style="background-color:#0d2138;padding:26px 24px;font-family:Tahoma,Arial,sans-serif;">
+            <td class="hpad" align="center" bgcolor="#0d2138" style="background-color:#0d2138;padding:26px 24px;font-family:Tahoma,Arial,sans-serif;">
               <div style="font-family:'Amiri',Tahoma,Georgia,serif;font-size:22px;font-weight:bold;color:#e0b94a;">سُمُوْ</div>
               <p style="margin:8px 0 0;font-size:12px;color:#a9bdd0;line-height:1.7;">
                 شكراً لكونك جزءاً من رحلتنا 💛<br>
