@@ -658,6 +658,40 @@ section { position: relative; }
 }
 .footer-bottom .heart { color: var(--gold-400); }
 
+/* Developer credit (owwwais) */
+.dev-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 16px;
+    padding: 7px 8px 7px 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--on-dark-muted);
+    font-size: 0.86rem;
+    font-weight: 500;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.dev-credit:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(207, 161, 46, 0.5);
+    transform: translateY(-2px);
+}
+.dev-credit .dev-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #fff;
+    padding: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+.dev-credit .dev-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.dev-credit .dev-name { color: var(--gold-300); font-weight: 800; letter-spacing: 0.3px; }
+
 /* ============================ Scroll reveal ============================ */
 .reveal {
     opacity: 0;
