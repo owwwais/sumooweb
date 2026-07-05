@@ -4,7 +4,7 @@
 المرتبط برابط الاختبار الداخلي:
 
 ```
-https://play.google.com/apps/internaltest/4701671565964215209
+https://play.google.com/apps/testing/com.owwwais.sumu
 ```
 
 الفكرة ببساطة: **تفتح ملف البريد في متصفح كروم ← تنسخ كل شيء ← تلصقه في نافذة كتابة الرسالة**
