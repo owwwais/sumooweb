@@ -1,0 +1,145 @@
+/* ==========================================================================
+   سُمو — Feedback page (extends style.css + testers.css)
+   ========================================================================== */
+
+.fb-shell {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ---------------- Header ---------------- */
+.fb-head {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.fb-head h1 {
+    font-size: clamp(2rem, 4.4vw, 2.8rem);
+    font-weight: 900;
+    line-height: 1.3;
+    margin: 14px 0 14px;
+}
+.fb-head .grad {
+    background: var(--grad-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.fb-head p {
+    font-size: 1.08rem;
+    color: var(--body);
+    max-width: 52ch;
+    margin: 0 auto;
+}
+
+/* ---------------- Card overrides ---------------- */
+.fb-card { padding: 36px; }
+
+/* Two fields side by side (name + email) */
+.fb-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+.field > label small {
+    font-weight: 500;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+/* ---------------- Category chips (2x2) ---------------- */
+.cat-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.cat-toggle input { position: absolute; opacity: 0; pointer-events: none; }
+.cat-opt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 12px;
+    border-radius: var(--radius-sm);
+    background: var(--sand-50);
+    border: 1.5px solid transparent;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--body);
+    cursor: pointer;
+    transition: all 0.25s var(--ease);
+}
+.cat-opt i { font-size: 1.15rem; color: var(--muted); transition: color 0.25s ease; }
+.cat-opt:hover { background: var(--sand-100); }
+.cat-toggle input:checked + .cat-opt {
+    background: rgba(207, 161, 46, 0.12);
+    border-color: var(--gold-500);
+    color: var(--gold-700);
+    box-shadow: 0 6px 18px -8px rgba(192, 144, 31, 0.5);
+}
+.cat-toggle input:checked + .cat-opt i { color: var(--gold-600); }
+.cat-toggle input:focus-visible + .cat-opt { box-shadow: 0 0 0 4px rgba(207, 161, 46, 0.18); }
+
+/* ---------------- Star rating ---------------- */
+.stars {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.star {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    font-size: 1.7rem;
+    line-height: 1;
+    color: var(--sand-200);
+    transition: transform 0.15s var(--ease), color 0.15s ease;
+}
+.star:hover { transform: scale(1.15); }
+.star.on { color: var(--gold-500); }
+.star-note {
+    margin-inline-start: 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--gold-700);
+    min-height: 1em;
+}
+
+/* ---------------- Textarea ---------------- */
+.textarea-wrap { display: block; }
+.textarea-wrap textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--ink);
+    background: var(--sand-50);
+    border: 1.5px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 15px 16px;
+    resize: vertical;
+    min-height: 130px;
+    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+.textarea-wrap textarea::placeholder { color: var(--muted); }
+.textarea-wrap textarea:focus {
+    outline: none;
+    background: var(--white);
+    border-color: var(--gold-500);
+    box-shadow: 0 0 0 4px rgba(207, 161, 46, 0.14);
+}
+
+/* ---------------- Success actions ---------------- */
+.fb-success-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 560px) {
+    .fb-card { padding: 26px 20px; }
+    .fb-row { grid-template-columns: 1fr; gap: 0; }
+    .cat-toggle { grid-template-columns: 1fr; }
+}
