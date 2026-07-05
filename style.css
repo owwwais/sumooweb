@@ -658,6 +658,41 @@ section { position: relative; }
 }
 .footer-bottom .heart { color: var(--gold-400); }
 
+/* Developer credit (owwwais) */
+.dev-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 16px;
+    padding: 7px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--on-dark-muted);
+    font-size: 0.86rem;
+    font-weight: 500;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.dev-credit:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(207, 161, 46, 0.5);
+    transform: translateY(-2px);
+}
+.dev-credit .dev-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 22px;
+}
+/* Force the logo to render pure white on the dark footer, whatever its own colors are. */
+.dev-credit .dev-logo img {
+    height: 22px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+}
+.dev-credit .dev-name { color: var(--gold-300); font-weight: 800; letter-spacing: 0.3px; }
+
 /* ============================ Scroll reveal ============================ */
 .reveal {
     opacity: 0;
