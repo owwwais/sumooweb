@@ -3,219 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية — سُمو</title>
+    <title>سياسة الخصوصية | سُمو</title>
     <meta name="description" content="سياسة الخصوصية لتطبيق سُمو. نحن لا نجمع أو نخزّن أي بيانات شخصية.">
-    <meta name="theme-color" content="#fbf8f1">
+    <meta name="theme-color" content="#f7f6f1">
+    <link rel="canonical" href="https://owwwais.github.io/sumooweb/privacy.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="سُمو">
+    <meta property="og:title" content="سياسة الخصوصية | سُمو">
+    <meta property="og:description" content="سُمو لا يجمع ولا يخزّن أي بيانات شخصية.">
+    <meta property="og:image" content="https://owwwais.github.io/sumooweb/og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
     <link rel="icon" type="image/png" href="Logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css?v=4">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="apple-touch-icon" href="Logo.png">
+
+    <link rel="preload" href="fonts/ThmanyahSerifDisplay-Black.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ThmanyahSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
+<body class="page-shell">
+    <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+    <span class="nav-sentinel" id="navSentinel" aria-hidden="true"></span>
 
     <!-- ===================== Navbar ===================== -->
-    <header class="navbar scrolled" id="navbar">
+    <header class="navbar" id="navbar">
         <div class="container nav-inner">
-            <a href="index.html" class="brand">
+            <a href="index.html" class="brand" aria-label="سُمو، الصفحة الرئيسية">
                 <span class="name">سُمُوْ</span>
             </a>
-            <nav class="nav-links" id="navLinks">
-                <a href="index.html#treasures">كنوز سمو</a>
+            <nav class="nav-links" id="navLinks" aria-label="التنقل الرئيسي">
                 <a href="index.html#showcase">الميزات</a>
+                <a href="index.html#treasures">كنوز سمو</a>
                 <a href="index.html#why">لماذا سمو؟</a>
-                <a href="index.html#download" class="btn btn-navy nav-cta"><i class="fa-solid fa-download"></i> حمّل التطبيق</a>
+                <a href="privacy.html" aria-current="page">سياسة الخصوصية</a>
+                <a href="index.html#download" class="btn btn-primary btn-sm nav-cta">حمّل التطبيق</a>
             </nav>
-            <button class="nav-toggle" id="navToggle" aria-label="القائمة"><i class="fa-solid fa-bars"></i></button>
+            <button class="nav-toggle" id="navToggle" aria-label="القائمة" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span>
+            </button>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <!-- ===================== Page hero ===================== -->
         <section class="page-hero">
-            <span class="orb orb-gold" style="width:320px;height:320px;top:-40px;inset-inline-start:-60px;"></span>
-            <div class="container reveal">
-                <span class="eyebrow">خصوصيتك أمانة</span>
-                <h1>سياسة الخصوصية</h1>
+            <div class="container">
+                <span class="page-kicker">خصوصيتك أمانة</span>
+                <h1>سياسة الخصوصية<span class="dot">.</span></h1>
                 <p class="updated">آخر تحديث: 17 ربيع الأول 1446هـ</p>
             </div>
         </section>
 
-        <section class="section" style="padding-top:0;">
-            <div class="privacy-lead reveal">
-                <i class="fa-solid fa-shield-heart"></i>
-                <p>نحن في تطبيق «سُمو» نولي خصوصية مستخدمينا أهميةً كبيرة، ونؤكّد أننا <strong>لا نجمع ولا نخزّن أي بيانات شخصية</strong> على الإطلاق.</p>
-            </div>
-
-            <div class="privacy-grid">
-                <article class="privacy-section reveal">
-                    <div class="s-icon"><i class="fa-solid fa-database"></i></div>
-                    <h2>جمع المعلومات</h2>
-                    <p>لا نقوم بجمع أو تخزين أي معلومات شخصية للمستخدمين. ولا يتطلب التطبيق تسجيل دخول أو إنشاء حساب.</p>
-                </article>
-
-                <article class="privacy-section reveal d1">
-                    <div class="s-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-                    <h2>استخدام التطبيق</h2>
+        <!-- ===================== Policy ===================== -->
+        <section class="policy">
+            <div class="container policy-grid">
+                <aside class="policy-summary reveal" aria-labelledby="summaryTitle">
+                    <h2 id="summaryTitle">باختصار</h2>
                     <ul>
-                        <li>يمكنك استخدام جميع الميزات دون الحاجة لتسجيل الدخول.</li>
-                        <li>جميع البيانات تتم معالجتها محلياً على جهازك.</li>
-                        <li>لا نتتبّع نشاطك أو طريقة استخدامك للتطبيق.</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> لا حساب ولا تسجيل دخول</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> لا نجمع أي بيانات شخصية</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> لا نتتبّع نشاطك</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i> لا ملفات تعريف ارتباط</li>
                     </ul>
-                </article>
+                </aside>
 
-                <article class="privacy-section reveal d2">
-                    <div class="s-icon"><i class="fa-solid fa-lock"></i></div>
-                    <h2>حماية البيانات</h2>
-                    <p>بما أن التطبيق لا يجمع أي بيانات، فإن كل ما يخصّك يبقى على جهازك الشخصي ولا يُشارك مع أي جهة.</p>
-                </article>
+                <article>
+                    <p class="policy-lead">نحن في تطبيق «سُمو» نولي خصوصية مستخدمينا أهميةً كبيرة، ونؤكّد أننا لا نجمع ولا نخزّن أي بيانات شخصية على الإطلاق.</p>
 
-                <article class="privacy-section reveal">
-                    <div class="s-icon"><i class="fa-solid fa-cookie-bite"></i></div>
-                    <h2>ملفات تعريف الارتباط</h2>
-                    <p>لا يستخدم تطبيقنا أي ملفات تعريف ارتباط (Cookies) أو تقنيات تتبّع مماثلة.</p>
-                </article>
+                    <section class="policy-section">
+                        <h2>جمع المعلومات</h2>
+                        <p>لا نقوم بجمع أو تخزين أي معلومات شخصية للمستخدمين. ولا يتطلب التطبيق تسجيل دخول أو إنشاء حساب.</p>
+                    </section>
 
-                <article class="privacy-section reveal d1">
-                    <div class="s-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
-                    <h2>تغييرات على السياسة</h2>
-                    <p>قد نحدّث سياسة الخصوصية من وقتٍ لآخر، وسنُشعرك بأي تغييرات جوهرية من خلال التطبيق.</p>
-                </article>
+                    <section class="policy-section">
+                        <h2>استخدام التطبيق</h2>
+                        <ul>
+                            <li>يمكنك استخدام جميع الميزات دون الحاجة لتسجيل الدخول.</li>
+                            <li>جميع البيانات تتم معالجتها محلياً على جهازك.</li>
+                            <li>لا نتتبّع نشاطك أو طريقة استخدامك للتطبيق.</li>
+                        </ul>
+                    </section>
 
-                <article class="privacy-section reveal d2">
-                    <div class="s-icon"><i class="fa-solid fa-envelope"></i></div>
-                    <h2>الاتصال بنا</h2>
-                    <p>إن كان لديك أي سؤال أو استفسار، يسعدنا تواصلك معنا:</p>
-                    <div class="privacy-contact">
-                        <button class="btn btn-navy" onclick="openContactForm()">
-                            <i class="fa-solid fa-message"></i> نموذج التواصل
-                        </button>
-                    </div>
+                    <section class="policy-section">
+                        <h2>حماية البيانات</h2>
+                        <p>بما أن التطبيق لا يجمع أي بيانات، فإن كل ما يخصّك يبقى على جهازك الشخصي ولا يُشارك مع أي جهة.</p>
+                    </section>
+
+                    <section class="policy-section">
+                        <h2>ملفات تعريف الارتباط</h2>
+                        <p>لا يستخدم تطبيقنا أي ملفات تعريف ارتباط (Cookies) أو تقنيات تتبّع مماثلة.</p>
+                    </section>
+
+                    <section class="policy-section">
+                        <h2>تغييرات على السياسة</h2>
+                        <p>قد نحدّث سياسة الخصوصية من وقتٍ لآخر، وسنُشعرك بأي تغييرات جوهرية من خلال التطبيق.</p>
+                    </section>
+
+                    <section class="policy-section">
+                        <h2>الاتصال بنا</h2>
+                        <p>إن كان لديك أي سؤال أو استفسار، يسعدنا تواصلك معنا عبر <a class="text-link" href="#contact">نموذج التواصل</a>.</p>
+                    </section>
+
+                    <p class="policy-outro">نشكرك على ثقتك بتطبيق «سُمو»، ونلتزم بالحفاظ على خصوصيتك وتقديم أفضل تجربةٍ ممكنة.</p>
                 </article>
             </div>
+        </section>
 
-            <div class="privacy-outro reveal">
-                <p>نشكرك على ثقتك بتطبيق «سُمو»، ونلتزم بالحفاظ على خصوصيتك وتقديم أفضل تجربةٍ ممكنة.</p>
+        <!-- ===================== Contact ===================== -->
+        <section class="contact" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-intro">
+                    <h2>تواصل معنا<span class="dot">.</span></h2>
+                    <p>سؤال عن الخصوصية، أو عن التطبيق نفسه؟ اكتب لنا، ونردّ عليك عبر بريدك.</p>
+                </div>
+
+                <div class="form-card">
+                    <form id="contactForm" action="https://formspree.io/f/xannloql" method="POST">
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="contactName">الاسم</label>
+                                <div class="input-wrap">
+                                    <input type="text" id="contactName" name="name" autocomplete="name" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="contactEmail">البريد الإلكتروني</label>
+                                <div class="input-wrap">
+                                    <input type="email" id="contactEmail" name="email" autocomplete="email" inputmode="email" dir="ltr" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="contactMessage">رسالتك</label>
+                            <div class="input-wrap">
+                                <textarea id="contactMessage" name="message" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-status" id="contactStatus" role="status" aria-live="polite"><span></span></div>
+
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span class="btn-label">إرسال</span>
+                            <span class="btn-spinner"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> جارٍ الإرسال…</span>
+                        </button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
-
-    <!-- Success toast -->
-    <div id="successMessage" class="success-message"><span>تم الإرسال بنجاح! 🎉</span></div>
-
-    <!-- Contact modal -->
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <button class="close-button" onclick="closeContactForm()" aria-label="إغلاق">&times;</button>
-            <h2>تواصل معنا</h2>
-            <form id="contactForm" action="https://formspree.io/f/xannloql" method="POST">
-                <div class="form-group"><input type="text" name="name" required placeholder="الاسم"></div>
-                <div class="form-group"><input type="email" name="email" required placeholder="البريد الإلكتروني"></div>
-                <div class="form-group"><textarea name="message" required placeholder="رسالتك"></textarea></div>
-                <button type="submit" class="btn btn-navy submit-button">
-                    <span class="button-text">إرسال</span>
-                    <div class="loading-spinner"></div>
-                </button>
-            </form>
-        </div>
-    </div>
 
     <!-- ===================== Footer ===================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <div class="brand">
-                        <span class="name">سُمُوْ</span>
-                    </div>
-                    <p>رفيقك اليومي الذي يعينك على تنظيم عباداتك وبناء عاداتٍ إيمانية مستدامة.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="تويتر"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#" aria-label="انستقرام"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="mailto:" aria-label="البريد"><i class="fa-solid fa-envelope"></i></a>
-                    </div>
+                    <div class="brand"><span class="name">سُمُوْ</span></div>
+                    <p>رفيقك اليومي لتنظيم عباداتك، وبناء عاداتٍ إيمانية تدوم.</p>
                 </div>
                 <div class="footer-cols">
-                    <div class="footer-col">
+                    <nav class="footer-col" aria-label="التطبيق">
                         <h4>التطبيق</h4>
-                        <a href="index.html#treasures">كنوز سمو</a>
                         <a href="index.html#showcase">الميزات</a>
+                        <a href="index.html#treasures">كنوز سمو</a>
                         <a href="index.html#why">لماذا سمو؟</a>
                         <a href="index.html#download">تحميل التطبيق</a>
-                    </div>
-                    <div class="footer-col">
+                    </nav>
+                    <nav class="footer-col" aria-label="روابط">
                         <h4>روابط</h4>
                         <a href="privacy.html">سياسة الخصوصية</a>
-                        <a href="mailto:">تواصل معنا</a>
-                    </div>
+                        <a href="#contact">تواصل معنا</a>
+                        <a href="feedback.html">شاركنا ملاحظاتك</a>
+                    </nav>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 سُمو — جميع الحقوق محفوظة · صُنع بكل <span class="heart">❤</span></p>
-                <div>
-                    <a href="https://owwwais.com/" target="_blank" rel="noopener noreferrer" class="dev-credit">
-                        <span class="dev-by">تصميم وتطوير</span>
-                        <span class="dev-logo"><img src="https://owwwais.com/logo.svg" alt="شعار owwwais" width="20" height="20" loading="lazy"></span>
-                        <span class="dev-name">owwwais</span>
-                    </a>
-                </div>
+                <p>© <span data-year>2026</span> سُمو. جميع الحقوق محفوظة.</p>
+                <a href="https://owwwais.com/" target="_blank" rel="noopener noreferrer" class="dev-credit">
+                    <span class="dev-by">تصميم وتطوير</span>
+                    <span class="dev-logo"><img src="https://owwwais.com/logo.svg" alt="شعار owwwais" width="20" height="20" loading="lazy"></span>
+                    <span class="dev-name">owwwais</span>
+                </a>
             </div>
         </div>
     </footer>
 
-    <script src="script.js?v=4"></script>
-    <script>
-        function openContactForm() {
-            const modal = document.getElementById('contactModal');
-            modal.classList.add('show');
-        }
-        function closeContactForm() {
-            document.getElementById('contactModal').classList.remove('show');
-        }
-        window.addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal')) closeContactForm();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeContactForm();
-        });
-
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const form = e.target;
-            const submitButton = form.querySelector('button[type="submit"]');
-            const buttonText = submitButton.querySelector('.button-text');
-            const spinner = submitButton.querySelector('.loading-spinner');
-            const originalText = buttonText.textContent;
-
-            submitButton.disabled = true;
-            buttonText.textContent = 'جاري الإرسال...';
-            spinner.style.display = 'inline-block';
-
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.ok) {
-                    form.reset();
-                    closeContactForm();
-                    const msg = document.getElementById('successMessage');
-                    msg.style.display = 'block';
-                    setTimeout(() => { msg.style.display = 'none'; }, 3000);
-                } else {
-                    throw new Error('error');
-                }
-            })
-            .catch(() => alert('عذراً، حدث خطأ في إرسال الرسالة. الرجاء المحاولة مرة أخرى.'))
-            .finally(() => {
-                submitButton.disabled = false;
-                buttonText.textContent = originalText;
-                spinner.style.display = 'none';
-            });
-        });
-    </script>
+    <script src="script.js?v=5"></script>
 </body>
 </html>

@@ -2,21 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
+    const hasIO = 'IntersectionObserver' in window;
 
-    /* ---- Navbar background on scroll ---- */
-    const onScroll = () => {
-        if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 20);
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    /* ---- Navbar background once the page leaves the top ---- */
+    const sentinel = document.getElementById('navSentinel');
+    if (navbar && sentinel && hasIO) {
+        new IntersectionObserver(([entry]) => {
+            navbar.classList.toggle('scrolled', !entry.isIntersecting);
+        }).observe(sentinel);
+    }
 
     /* ---- Mobile menu ---- */
     if (navToggle && navLinks) {
         const toggleMenu = (open) => {
             navLinks.classList.toggle('open', open);
-            navToggle.innerHTML = open
-                ? '<i class="fa-solid fa-xmark"></i>'
-                : '<i class="fa-solid fa-bars"></i>';
+            navToggle.setAttribute('aria-expanded', String(open));
+            document.body.classList.toggle('menu-open', open);
         };
         navToggle.addEventListener('click', () => {
             toggleMenu(!navLinks.classList.contains('open'));
@@ -24,11 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => toggleMenu(false));
         });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') toggleMenu(false);
+        });
     }
 
     /* ---- Scroll reveal ---- */
     const revealEls = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window && revealEls.length) {
+    if (hasIO && revealEls.length) {
         const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -36,80 +40,113 @@ document.addEventListener('DOMContentLoaded', () => {
                     obs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
         revealEls.forEach(el => observer.observe(el));
     } else {
         revealEls.forEach(el => el.classList.add('visible'));
     }
 
-    /* ==========================================================
-       Interactive mouse effects (pointer-fine devices only)
-       ========================================================== */
-    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-    if (finePointer) {
-        /* --- Hero: cursor spotlight + parallax depth --- */
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            const shotMain = hero.querySelector('.shot-main');
-            const shotBack = hero.querySelector('.shot-back');
-            const orbs = hero.querySelectorAll('.orb');
-            let frame = null;
-
-            hero.addEventListener('mousemove', (e) => {
-                const r = hero.getBoundingClientRect();
-                const rx = (e.clientX - r.left) / r.width;
-                const ry = (e.clientY - r.top) / r.height;
-                hero.style.setProperty('--mx', (rx * 100) + '%');
-                hero.style.setProperty('--my', (ry * 100) + '%');
-                const dx = rx - 0.5;
-                const dy = ry - 0.5;
-
-                if (frame) cancelAnimationFrame(frame);
-                frame = requestAnimationFrame(() => {
-                    if (shotMain) shotMain.style.transform = `translate(${dx * -24}px, ${dy * -24}px) rotate(-3deg)`;
-                    if (shotBack) shotBack.style.transform = `translate(${dx * -40}px, ${dy * -40}px) rotate(6deg)`;
-                    orbs.forEach((o, i) => {
-                        const k = (i + 1) * 16;
-                        o.style.transform = `translate(${dx * k}px, ${dy * k}px)`;
-                    });
-                });
+    /* ---- Story: the step crossing the middle of the viewport drives the stage ---- */
+    const stage = document.getElementById('storyStage');
+    const steps = document.querySelectorAll('.story-step');
+    if (stage && steps.length && hasIO) {
+        const shots = stage.querySelectorAll('.story-shot');
+        const setPhase = (index) => {
+            stage.dataset.phase = index;
+            steps.forEach(step => step.classList.toggle('is-active', step.dataset.step === index));
+            shots.forEach(shot => shot.classList.toggle('is-active', shot.dataset.shot === index));
+        };
+        const stepObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) setPhase(entry.target.dataset.step);
             });
+        }, { rootMargin: '-50% 0px -50% 0px' });
+        steps.forEach(step => stepObserver.observe(step));
+    }
 
-            hero.addEventListener('mouseleave', () => {
-                if (shotMain) shotMain.style.transform = '';
-                if (shotBack) shotBack.style.transform = '';
-                orbs.forEach(o => { o.style.transform = ''; });
-            });
-        }
+    /* ---- Tasbih: a working miniature of the app's counter ---- */
+    const tasbih = document.getElementById('tasbih');
+    if (tasbih) {
+        const countEl = document.getElementById('tasbihCount');
+        const phraseEl = document.getElementById('tasbihPhrase');
+        const ring = document.getElementById('tasbihRing');
+        const phrases = ['سبحان الله', 'الحمد لله', 'الله أكبر'];
+        const ROUND = 33;
+        const LENGTH = 389.56;
+        let count = 0;
+        let phrase = 0;
 
-        /* --- 3D tilt on cards --- */
-        document.querySelectorAll('.treasure-card, .why-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transition = 'transform 0.12s ease-out, box-shadow 0.3s ease, border-color 0.3s ease';
-            });
-            card.addEventListener('mousemove', (e) => {
-                const r = card.getBoundingClientRect();
-                const px = (e.clientX - r.left) / r.width - 0.5;
-                const py = (e.clientY - r.top) / r.height - 0.5;
-                card.style.transform =
-                    `perspective(820px) rotateX(${py * -5}deg) rotateY(${px * 7}deg) translateY(-6px)`;
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transition = 'transform 0.5s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease, border-color 0.4s ease';
-                card.style.transform = '';
-            });
+        tasbih.addEventListener('click', () => {
+            if (count === ROUND) {
+                count = 0;
+                phrase = (phrase + 1) % phrases.length;
+                phraseEl.textContent = phrases[phrase];
+            }
+            count += 1;
+            countEl.textContent = count;
+            ring.style.strokeDashoffset = LENGTH * (1 - count / ROUND);
+            if (navigator.vibrate) navigator.vibrate(count === ROUND ? 40 : 8);
         });
+    }
 
-        /* --- Magnetic pull on primary buttons --- */
-        document.querySelectorAll('.btn-navy, .btn-gold').forEach(btn => {
-            btn.addEventListener('mousemove', (e) => {
-                const r = btn.getBoundingClientRect();
-                const mx = (e.clientX - r.left) / r.width - 0.5;
-                const my = (e.clientY - r.top) / r.height - 0.5;
-                btn.style.transform = `translate(${mx * 7}px, ${my * 7 - 3}px)`;
-            });
-            btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    /* ---- Today's Hijri date (Umm al-Qura), straight from the browser ---- */
+    const hijriToday = document.getElementById('hijriToday');
+    const hijriDay = document.getElementById('hijriDay');
+    const hijriMonth = document.getElementById('hijriMonth');
+    if (hijriToday && hijriDay && hijriMonth) {
+        try {
+            const parts = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura-nu-latn', {
+                day: 'numeric', month: 'long', year: 'numeric',
+            }).formatToParts(new Date());
+            const get = (type) => (parts.find(p => p.type === type) || {}).value;
+            if (get('day') && get('month') && get('year')) {
+                hijriDay.textContent = get('day');
+                hijriMonth.textContent = `${get('month')} ${get('year')} هـ`;
+                hijriToday.hidden = false;
+            }
+        } catch (_) { /* the tile stands on its title alone */ }
+    }
+
+    /* ---- Testers form: arriving from an iPhone button preselects the device ---- */
+    const deviceParam = new URLSearchParams(location.search).get('device');
+    const deviceInput = deviceParam && document.getElementById(`dev-${deviceParam}`);
+    if (deviceInput) deviceInput.checked = true;
+
+    /* ---- Footer year ---- */
+    document.querySelectorAll('[data-year]').forEach(el => {
+        el.textContent = new Date().getFullYear();
+    });
+
+    /* ---- Contact form (privacy page), sent through Formspree ---- */
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const status = document.getElementById('contactStatus');
+        const showStatus = (kind, msg) => {
+            status.className = `form-status ${kind}`;
+            status.querySelector('span').textContent = msg;
+        };
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            status.className = 'form-status';
+            submitBtn.classList.add('loading');
+
+            try {
+                const res = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' },
+                });
+                const data = await res.json();
+                if (!data.ok) throw new Error('send failed');
+                contactForm.reset();
+                showStatus('ok', 'وصلتنا رسالتك. سنردّ عليك عبر بريدك قريباً بإذن الله.');
+            } catch (_) {
+                showStatus('fail', 'تعذّر إرسال رسالتك. تحقّق من اتصالك وحاول مرة أخرى.');
+            } finally {
+                submitBtn.classList.remove('loading');
+            }
         });
     }
 });

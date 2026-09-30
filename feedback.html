@@ -3,68 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شاركنا ملاحظاتك — سُمو</title>
+    <title>شاركنا ملاحظاتك | سُمو</title>
     <meta name="description" content="ملاحظاتك تصنع نسخة أفضل من تطبيق سُمو. شاركنا اقتراحاتك والأخطاء التي واجهتك أثناء التجربة.">
-    <meta name="theme-color" content="#fbf8f1">
+    <meta name="theme-color" content="#f7f6f1">
     <meta name="robots" content="noindex">
 
     <link rel="icon" type="image/png" href="Logo.png">
     <link rel="apple-touch-icon" href="Logo.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css?v=4">
-    <link rel="stylesheet" href="testers.css?v=1">
-    <link rel="stylesheet" href="feedback.css?v=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" href="fonts/ThmanyahSerifDisplay-Black.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/ThmanyahSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="feedback.css?v=3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="testers-page">
+<body class="page-shell">
+    <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+    <span class="nav-sentinel" id="navSentinel" aria-hidden="true"></span>
 
     <!-- ===================== Navbar ===================== -->
-    <header class="navbar scrolled" id="navbar">
+    <header class="navbar" id="navbar">
         <div class="container nav-inner">
-            <a href="index.html" class="brand">
+            <a href="index.html" class="brand" aria-label="سُمو، الصفحة الرئيسية">
                 <span class="name">سُمُوْ</span>
             </a>
-            <nav class="nav-links">
+            <nav class="nav-links" id="navLinks" aria-label="التنقل الرئيسي">
                 <a href="index.html">الرئيسية</a>
                 <a href="index.html#showcase">الميزات</a>
                 <a href="privacy.html">سياسة الخصوصية</a>
             </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="القائمة" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span>
+            </button>
         </div>
     </header>
 
-    <main class="tester-main">
-        <span class="orb orb-gold" style="width:340px;height:340px;top:-90px;inset-inline-end:-110px;"></span>
-        <span class="orb orb-navy" style="width:300px;height:300px;bottom:-70px;inset-inline-start:-90px;"></span>
-
+    <main id="main" class="fb-main">
         <div class="container">
             <div class="fb-shell">
                 <!-- Header -->
-                <div class="fb-head">
-                    <span class="eyebrow">رأيك يهمّنا</span>
-                    <h1>شاركنا <span class="grad">ملاحظاتك</span></h1>
-                    <p>
-                        بعد تجربتك لتطبيق <strong>سُمو</strong>، نودّ سماع رأيك.
-                        كل اقتراح أو ملاحظة يساعدنا على تحسين التطبيق قبل إطلاقه للجميع.
+                <header class="fb-head">
+                    <span class="page-kicker">رأيك يهمّنا</span>
+                    <h1>شاركنا ملاحظاتك<span class="dot">.</span></h1>
+                    <p class="lead">
+                        جرّبت <strong>سُمو</strong>؟ أخبرنا بما أعجبك، وما تتمنى تحسينه، وأي خطأ واجهك.
+                        نقرأ كل ملاحظة بعناية.
                     </p>
-                </div>
+                </header>
 
                 <!-- Form card -->
-                <div class="tester-card fb-card">
+                <div class="form-card">
                     <form id="feedbackForm" novalidate>
-                        <div class="fb-row">
+                        <div class="form-row">
                             <div class="field">
                                 <label for="name">الاسم <small>(اختياري)</small></label>
                                 <div class="input-wrap">
-                                    <i class="fa-solid fa-user"></i>
                                     <input type="text" id="name" name="name" placeholder="اسمك" autocomplete="name">
                                 </div>
                             </div>
                             <div class="field">
                                 <label for="email">البريد الإلكتروني <small>(اختياري)</small></label>
                                 <div class="input-wrap">
-                                    <i class="fa-solid fa-envelope"></i>
                                     <input type="email" id="email" name="email" placeholder="example@email.com"
                                            autocomplete="email" inputmode="email" dir="ltr">
                                 </div>
@@ -73,64 +74,61 @@
                         </div>
 
                         <div class="field">
-                            <label>نوع الملاحظة <span class="req">*</span></label>
-                            <div class="cat-toggle">
+                            <label id="categoryLabel">نوع الملاحظة <span class="req">*</span></label>
+                            <div class="choice-grid" role="radiogroup" aria-labelledby="categoryLabel">
                                 <input type="radio" id="cat-suggest" name="category" value="اقتراح تطوير">
-                                <label for="cat-suggest" class="cat-opt"><i class="fa-solid fa-lightbulb"></i><span>اقتراح تطوير</span></label>
+                                <label for="cat-suggest" class="choice"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span>اقتراح تطوير</span></label>
 
                                 <input type="radio" id="cat-bug" name="category" value="مشكلة أو خطأ">
-                                <label for="cat-bug" class="cat-opt"><i class="fa-solid fa-bug"></i><span>مشكلة أو خطأ</span></label>
+                                <label for="cat-bug" class="choice"><i class="fa-solid fa-bug" aria-hidden="true"></i><span>مشكلة أو خطأ</span></label>
 
                                 <input type="radio" id="cat-love" name="category" value="إعجاب">
-                                <label for="cat-love" class="cat-opt"><i class="fa-solid fa-heart"></i><span>إعجاب</span></label>
+                                <label for="cat-love" class="choice"><i class="fa-solid fa-heart" aria-hidden="true"></i><span>إعجاب</span></label>
 
                                 <input type="radio" id="cat-other" name="category" value="أخرى">
-                                <label for="cat-other" class="cat-opt"><i class="fa-solid fa-comment-dots"></i><span>أخرى</span></label>
+                                <label for="cat-other" class="choice"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i><span>أخرى</span></label>
                             </div>
                             <small class="err" data-for="category"></small>
                         </div>
 
                         <div class="field">
-                            <label>تقييمك العام للتطبيق <small>(اختياري)</small></label>
-                            <div class="stars" id="stars" role="radiogroup" aria-label="التقييم">
-                                <button type="button" class="star" data-value="1" aria-label="نجمة"><i class="fa-solid fa-star"></i></button>
-                                <button type="button" class="star" data-value="2" aria-label="نجمتان"><i class="fa-solid fa-star"></i></button>
-                                <button type="button" class="star" data-value="3" aria-label="ثلاث نجوم"><i class="fa-solid fa-star"></i></button>
-                                <button type="button" class="star" data-value="4" aria-label="أربع نجوم"><i class="fa-solid fa-star"></i></button>
-                                <button type="button" class="star" data-value="5" aria-label="خمس نجوم"><i class="fa-solid fa-star"></i></button>
-                                <span class="star-note" id="starNote"></span>
+                            <label id="ratingLabel">تقييمك العام للتطبيق <small>(اختياري)</small></label>
+                            <div class="stars" id="stars" role="radiogroup" aria-labelledby="ratingLabel">
+                                <button type="button" class="star" data-value="1" aria-label="نجمة"><i class="fa-solid fa-star" aria-hidden="true"></i></button>
+                                <button type="button" class="star" data-value="2" aria-label="نجمتان"><i class="fa-solid fa-star" aria-hidden="true"></i></button>
+                                <button type="button" class="star" data-value="3" aria-label="ثلاث نجوم"><i class="fa-solid fa-star" aria-hidden="true"></i></button>
+                                <button type="button" class="star" data-value="4" aria-label="أربع نجوم"><i class="fa-solid fa-star" aria-hidden="true"></i></button>
+                                <button type="button" class="star" data-value="5" aria-label="خمس نجوم"><i class="fa-solid fa-star" aria-hidden="true"></i></button>
+                                <span class="star-note" id="starNote" aria-live="polite"></span>
                             </div>
                             <input type="hidden" name="rating" id="rating" value="">
                         </div>
 
                         <div class="field">
                             <label for="message">ملاحظتك بالتفصيل <span class="req">*</span></label>
-                            <div class="input-wrap textarea-wrap">
+                            <div class="input-wrap">
                                 <textarea id="message" name="message" rows="5"
-                                          placeholder="اكتب هنا ما أعجبك، أو ما تتمنى تحسينه، أو أي مشكلة واجهتك…" required></textarea>
+                                          placeholder="ما أعجبك، ما تتمنى تحسينه، أو أي مشكلة واجهتك…" required></textarea>
                             </div>
                             <small class="err" data-for="message"></small>
                         </div>
 
-                        <button type="submit" class="btn btn-gold submit-btn" id="submitBtn">
-                            <span class="btn-label"><i class="fa-solid fa-paper-plane"></i> إرسال الملاحظة</span>
-                            <span class="btn-spinner"><i class="fa-solid fa-spinner fa-spin"></i> جارٍ الإرسال…</span>
+                        <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+                            <span class="btn-label">إرسال الملاحظة</span>
+                            <span class="btn-spinner"><i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> جارٍ الإرسال…</span>
                         </button>
 
-                        <p class="form-note">
-                            <i class="fa-solid fa-lock"></i>
-                            نقرأ كل ملاحظة بعناية. شكراً لوقتك 💛
-                        </p>
+                        <p class="form-note">شكراً لوقتك.</p>
                     </form>
 
                     <!-- Success state -->
-                    <div class="tester-success" id="successState" hidden>
-                        <div class="success-mark"><i class="fa-solid fa-check"></i></div>
-                        <h2>وصلتنا ملاحظتك!</h2>
+                    <div class="form-success" id="successState" hidden>
+                        <div class="success-mark"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
+                        <h2>وصلتنا ملاحظتك.</h2>
                         <p>شكراً جزيلاً على مشاركتك. رأيك يصنع فرقاً حقيقياً في تطوير سُمو.</p>
-                        <div class="fb-success-actions">
-                            <button type="button" class="btn btn-ghost" id="againBtn"><i class="fa-solid fa-plus"></i> إضافة ملاحظة أخرى</button>
-                            <a href="index.html" class="btn btn-navy"><i class="fa-solid fa-house"></i> العودة للرئيسية</a>
+                        <div class="form-success-actions">
+                            <button type="button" class="btn btn-secondary" id="againBtn">إضافة ملاحظة أخرى</button>
+                            <a href="index.html" class="btn btn-primary">العودة للرئيسية</a>
                         </div>
                     </div>
                 </div>
@@ -138,21 +136,20 @@
         </div>
     </main>
 
-    <footer class="footer tester-footer">
+    <footer class="footer footer-min">
         <div class="container">
             <div class="footer-bottom">
-                <p>© 2025 سُمو — جميع الحقوق محفوظة · صُنع بكل <span class="heart">❤</span></p>
-                <div>
-                    <a href="https://owwwais.com/" target="_blank" rel="noopener noreferrer" class="dev-credit">
-                        <span class="dev-by">تصميم وتطوير</span>
-                        <span class="dev-logo"><img src="https://owwwais.com/logo.svg" alt="شعار owwwais" width="20" height="20" loading="lazy"></span>
-                        <span class="dev-name">owwwais</span>
-                    </a>
-                </div>
+                <p>© <span data-year>2026</span> سُمو. جميع الحقوق محفوظة.</p>
+                <a href="https://owwwais.com/" target="_blank" rel="noopener noreferrer" class="dev-credit">
+                    <span class="dev-by">تصميم وتطوير</span>
+                    <span class="dev-logo"><img src="https://owwwais.com/logo.svg" alt="شعار owwwais" width="20" height="20" loading="lazy"></span>
+                    <span class="dev-name">owwwais</span>
+                </a>
             </div>
         </div>
     </footer>
 
+    <script src="script.js?v=5"></script>
     <script src="feedback.js?v=1"></script>
 </body>
 </html>
